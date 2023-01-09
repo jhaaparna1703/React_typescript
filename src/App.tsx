@@ -1,33 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import InputField from "./components/InputField";
-import TodoList from './components/TodoList';
-import { Todo } from "./modal"
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import {actionCreators, State} from './state'
+import { bindActionCreators } from 'redux';
 
-const App: React.FC = () => {
 
-  const [todo, setTodo] = useState<string>("")
-  const [todos, setTodos] = useState<Todo[]>([]);
+function App() {
 
-  const handleAdd = (e: React.FormEvent) => {
-    e.preventDefault();
+  const dispatch = useDispatch();
 
-    if (todo) {
-      setTodos([...todos, { id: Date.now(), todo, isDone: false }])
-      setTodo("");
-    }
-  };
-
-  console.log(todos);
+  const {depositMoney, withdrawMoney, bankrupt} = bindActionCreators(actionCreators, dispatch)
+  const state = useSelector((state:State)=> state.bank)
 
   return (
     <div className="App">
-      <span className="heading ">Taskify</span>
-      <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <TodoList todos={todos} setTodos={setTodos} />
-      {/* {todos.map((t) => (
-        <li>{t.todo}</li>
-      ))} */}
+      <h1>{state}</h1>
+      <button onClick={()=> depositMoney(1000)}>Deposit</button>
+      <button onClick={()=> withdrawMoney(500)}>Withdraw</button>
+      <button onClick={()=> bankrupt()}>Bankrupt</button>
+
+       
     </div>
   );
 }
