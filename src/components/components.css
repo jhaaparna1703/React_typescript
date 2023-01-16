@@ -7,10 +7,15 @@
 .apnastore{
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 13px !important;
-    margin-left: -12px;
     font-weight: bolder;
+    color: white !important;
+    margin-left:-10px !important 
+    
+    
     
 }
+
+
 
 .FaTruck{
     color: white;
@@ -19,29 +24,30 @@
 
 }
 
-.searchbar {
-    height:25px;
-    width: 45%;
-    border: none;
-    margin: 2px;
-    padding-left: 5px;
-    font-size: 12px;
-    border-radius: 3px;
+.d-flex{
+    height: 29px;
+    width:40%;
+    margin-right: 500px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     
+
 }
 
-.search_icon{
-    background-color: white;
-    height:25px;
-    margin: 2px ;
-    padding: 0px 10px;
-    position: absolute;
-    margin-right: 30px;
-    
+.searchbox{
+    height: 29px;
+    font-size: 12px !important;
 }
 
-.BisearchAlt2{
-    color: black;
-   
+.BiSearchAlt2{
+    margin-left: -27px;
+    color:#016dff;
 }
+
+.FaCartPlus{
+    color: white;
+    font-size: 22px;
+}
+
 
