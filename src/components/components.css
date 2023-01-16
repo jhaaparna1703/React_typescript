@@ -1,0 +1,47 @@
+.navbar{
+    background-color: #016dff;
+    width: 100%;
+    height: 40px;
+}
+
+.apnastore{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 13px !important;
+    margin-left: -12px;
+    font-weight: bolder;
+    
+}
+
+.FaTruck{
+    color: white;
+    margin-left: 55px;
+    font-size: 30px;
+
+}
+
+.searchbar {
+    height:25px;
+    width: 45%;
+    border: none;
+    margin: 2px;
+    padding-left: 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    
+}
+
+.search_icon{
+    background-color: white;
+    height:25px;
+    margin: 2px ;
+    padding: 0px 10px;
+    position: absolute;
+    margin-right: 30px;
+    
+}
+
+.BisearchAlt2{
+    color: black;
+   
+}
+

@@ -1,22 +1,35 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { FaTruck } from "react-icons/fa";
+import {BiSearchAlt2} from "react-icons/bi"
+import "./components.css";
 
-
-const header = () => {
+export const Header = () => {
   return (
-    <Navbar bg="primary" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-  )
-}
+    <Navbar className="navbar" variant="dark">
+      <FaTruck className="FaTruck" />
+      <Container>
+        <Navbar.Brand className="apnastore" href="#home">
+          Apna Store
+        </Navbar.Brand>
+        <div className="input-group">
+          <input
+            type="search"
+            className="searchbar"
+            placeholder="Search for products"
+            aria-label="Search"
+            aria-describedby="search-addon"
 
-export default header
+            
+          />
+          <span className="search_icon">
+          <BiSearchAlt2 className="BisearchAlt2"/>
+          </span>
+          
+        </div>
+      </Container>
+    </Navbar>
+  );
+};
