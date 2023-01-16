@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //components
 import {Header} from './components/appHeader';
+import {ProductOptions} from './components/productOptions';
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
       <header>
         <Header/>
       </header>
+      
+        <ProductOptions/>
+      
     </div>
   );
 }

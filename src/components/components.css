@@ -50,4 +50,6 @@
     font-size: 22px;
 }
 
-
+#product-image{
+    max-width: 15px; 
+}
