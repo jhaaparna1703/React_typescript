@@ -1,15 +1,16 @@
 .navbar{
     background-color: #016dff;
     width: 100%;
-    height: 40px;
+    height: 50px;
 }
 
 .apnastore{
     font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 13px !important;
+    font-size: 20px !important;
     font-weight: bolder;
     color: white !important;
-    margin-left:-10px !important 
+    margin-left:-25px !important;
+    margin-right: 1px !important; 
     
     
     
@@ -20,14 +21,14 @@
 .FaTruck{
     color: white;
     margin-left: 55px;
-    font-size: 30px;
+    font-size: 40px;
 
 }
 
 .d-flex{
     height: 29px;
     width:40%;
-    margin-right: 500px;
+    margin-right: 750px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -36,20 +37,62 @@
 }
 
 .searchbox{
-    height: 29px;
-    font-size: 12px !important;
+    height: 35px;
+    font-size: 16px !important;
 }
 
 .BiSearchAlt2{
-    margin-left: -27px;
+    margin-left: -37px;
     color:#016dff;
+    font-size: 25px;
 }
 
 .FaCartPlus{
     color: white;
-    font-size: 22px;
+    font-size: 32px;
+    margin-right:40px;
+}
+
+.products{
+    display: flex;
+    margin-left: 100px;
+
 }
 
 #product-image{
-    max-width: 15px; 
+    max-width: 5.5vh; 
+    margin-left: 35px;
+    margin-top: 15px; 
 }
+
+
+#product-name{
+    font-size: 12px ;
+    margin-left: 30px ; 
+    margin-top: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card{
+    text-align: center;
+    padding: 4px;
+    height: 55vh;
+    width:50%;
+    margin: 7px;
+}
+
+.container{
+    display : flex;
+}
+.grid{
+    width:50%
+}
+ 
+.products-img{
+     height: 30vh; 
+     margin-bottom: 15px;
+}
+ 

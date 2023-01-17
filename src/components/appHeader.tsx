@@ -2,7 +2,6 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { FaTruck,FaCartPlus } from "react-icons/fa";
 import { BiSearchAlt2 } from "react-icons/bi";
 import "./components.css";
