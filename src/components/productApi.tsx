@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./components.css";
 
+
 interface IProductType {
   id: number;
   image: string;
@@ -15,8 +16,12 @@ interface IProductType {
   description: string;
 }
 
+
+
 const ProductApi = () => {
   const [user, setData] = useState([]);
+
+  
 
   const alldata = () =>
     fetch("https://fakestoreapi.com/products")
@@ -28,6 +33,8 @@ const ProductApi = () => {
   }, []);
 
   return (
+
+    
     <div className="container">
       {user.map((data: IProductType) => (
         <Container>

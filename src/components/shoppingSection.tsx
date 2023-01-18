@@ -6,6 +6,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
+import data from '../data.json';
+import { Header } from "./appHeader";
+
 
 export const ShoppingSection = () => {
 
@@ -17,17 +20,13 @@ export const ShoppingSection = () => {
     description: string;
   }
 
-  const [posts, setPosts] = useState([]);
+  
 
-  const columnsPerRow = 4;
 
-  const alldata = () =>
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((res) => setPosts(res));
+  const columnsPerRow = 3;
 
   const getColumnsForRow = () => {
-    let items = posts.map((post: IProductType) => {
+    let items = data.map((post: IProductType) => {
       console.log(post, "post");
       return (
         <Col key={post.id}>
@@ -47,7 +46,7 @@ export const ShoppingSection = () => {
   };
 
   useEffect(() => {
-    alldata();
+    getColumnsForRow();
   }, []);
 
   return (
