@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
@@ -6,12 +6,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
-import data from '../data.json';
-import { Header } from "./appHeader";
-
+import data from "../data.json";
 
 export const ShoppingSection = () => {
-
   interface IProductType {
     id: number;
     image: string;
@@ -19,9 +16,6 @@ export const ShoppingSection = () => {
     price: number;
     description: string;
   }
-
-  
-
 
   const columnsPerRow = 3;
 
@@ -47,14 +41,13 @@ export const ShoppingSection = () => {
 
   useEffect(() => {
     getColumnsForRow();
-  }, []);
+  });
 
   return (
     <Container>
       <Row xs={1} md={columnsPerRow}>
         {getColumnsForRow()}
       </Row>
-      {/* <button onClick={getColumnsForRow}>click</button> */}
     </Container>
   );
 };
