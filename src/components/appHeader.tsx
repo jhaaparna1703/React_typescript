@@ -7,7 +7,6 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import "./components.css";
 import CartModal from "./CartModal";
 import data from "../data.json";
-import { ShoppingSection } from "./shoppingSection";
 
 export const Header = () => {
   const searchProduct = (e: React.ChangeEvent<HTMLInputElement>) => {
