@@ -1,6 +1,4 @@
 import * as actionTypes from "./actionTypes";
-import data from "../data.json";
-import * as action from "./action";
 
 const initialState: ProductState = {
   products: [],
@@ -14,6 +12,17 @@ const productReducer = (
     case actionTypes.SHOW_PRODUCTS:
       return {
         ...state,
+        products: [...action.products],
+      };
+
+    case actionTypes.ADD_TO_CART:
+      return {
+        ...state,
+        
+        products: state.products.map((product) =>
+          (product.id === action.id ? { ...product, selected: true } : product),
+          console.log(action.id)
+        ),
       };
   }
 

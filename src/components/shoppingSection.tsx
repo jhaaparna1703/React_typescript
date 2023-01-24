@@ -7,20 +7,48 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import data from "../data.json";
+import { Dispatch } from "react";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { addToCart, showProducts } from "../store/action";
+
+interface IProductType {
+  id: number;
+  image: string;
+  title: string;
+  price: number;
+  description: string;
+}
 
 export const ShoppingSection = () => {
-  interface IProductType {
-    id: number;
-    image: string;
-    title: string;
-    price: number;
-    description: string;
-  }
+  const dispatch: Dispatch<any> = useDispatch();
+
+  // Saving product json data in store
+  const showProduct = React.useCallback(
+    (products: IProduct[]) => dispatch(showProducts(products)),
+    [dispatch]
+  );
+
+  // Calling reducer action to save the data in store
+  useEffect(() => {
+    showProduct(data);
+  }, [showProduct]);
+
+  // Reading Products data from store
+  const products: readonly IProduct[] = useSelector(
+    (state: ProductState) => state.products,
+    shallowEqual
+  );
+
+  const addCartHandler = (id: number) => {
+    console.log(id);
+    dispatch(addToCart(id));
+  };
+  console.log("PRODUCTS FROM REDUX", products);
 
   const columnsPerRow = 3;
 
   const getColumnsForRow = () => {
-    let items = data.map((post: IProductType) => {
+    let items = products.map((post: IProductType) => {
       console.log(post, "post");
       return (
         <Col key={post.id}>
@@ -30,7 +58,9 @@ export const ShoppingSection = () => {
               <Card.Title>{post.title.substring(0, 20)}</Card.Title>
               <Card.Text>{post.description.substring(0, 38)}...</Card.Text>
               <Card.Text>Price : ${post.price}</Card.Text>
-              <Button variant="primary">Add to Cart</Button>
+              <Button variant="primary" onClick={() => addCartHandler(post.id)}>
+                Add to Cart
+              </Button>
             </Card.Body>
           </Card>
         </Col>

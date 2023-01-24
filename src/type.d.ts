@@ -12,6 +12,7 @@ type ProductState = {
   }
   
   type ProductsAction = {
+    id?:number
     type: string
     products: IProduct[]
   }
