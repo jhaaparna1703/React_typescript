@@ -108,4 +108,17 @@
 
 
 }
+
+.cart-quantity{
+    display: flex;
+    font-size: 18px;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    margin-bottom: -7px;
+}
  

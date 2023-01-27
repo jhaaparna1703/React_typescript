@@ -1,9 +1,9 @@
-interface IProduct{
+ interface IProduct{
     id: number;
     image: string;
     title: string;
     price: number;
-    description: string;
+    description : string;
 }
 
 type ProductState = {
@@ -13,6 +13,9 @@ type ProductState = {
   
   type ProductsAction = {
     id?:number
+    image?: string;
+    title?: string;
+    price?: number;
     type: string
     products: IProduct[]
   }

@@ -39,9 +39,9 @@ export const ShoppingSection = () => {
     shallowEqual
   );
 
-  const addCartHandler = (id: number) => {
-    console.log(id);
-    dispatch(addToCart(id));
+  const addCartHandler = (post: IProduct) => {
+    console.log(post);
+    dispatch(addToCart(post));
   };
   console.log("PRODUCTS FROM REDUX", products);
 
@@ -58,7 +58,7 @@ export const ShoppingSection = () => {
               <Card.Title>{post.title.substring(0, 20)}</Card.Title>
               <Card.Text>{post.description.substring(0, 38)}...</Card.Text>
               <Card.Text>Price : ${post.price}</Card.Text>
-              <Button variant="primary" onClick={() => addCartHandler(post.id)}>
+              <Button variant="primary" onClick={() => addCartHandler(post)}>
                 Add to Cart
               </Button>
             </Card.Body>

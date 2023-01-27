@@ -12,7 +12,9 @@ const CartModal = () => {
 
   return (
     <div>
+      <div className="cart-quantity">1</div>
       <FaCartPlus onClick={handleShow} className="FaCartPlus" />
+      
 
       <Modal show={show} onHide={handleClose} className="Modal-cart">
         <Modal.Header closeButton>

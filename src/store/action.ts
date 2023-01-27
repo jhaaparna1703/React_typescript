@@ -7,10 +7,10 @@ export const showProducts = (products: IProduct[]) => {
   };
   return action;
 };
-export const addToCart = (id: number) => {
+export const addToCart = (post:IProduct ) => {
   return {
     type: actionTypes.ADD_TO_CART,
-    id,
+    post
   };
 };
 export const removeFromCart = (id: number) => {

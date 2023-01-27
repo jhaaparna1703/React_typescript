@@ -1,5 +1,12 @@
 import * as actionTypes from "./actionTypes";
 
+interface cartProductType {
+  id: number;
+  image: string;
+  title: string;
+  price: number;
+}
+
 const initialState: ProductState = {
   products: [],
 };
@@ -16,11 +23,20 @@ const productReducer = (
       };
 
     case actionTypes.ADD_TO_CART:
+      let cartProduct: IProduct = {
+        id: 0,
+        image: "",
+        title: "",
+        price: 0,
+        description: ""
+      };
+
       return {
         ...state,
-        
-        products: state.products.map((product) =>
-          (product.id === action.id ? { ...product, selected: true } : product),
+
+        products: state.products.map(
+          (product) =>
+            product.id === action.id ? { ...product, selected: true } : product,
           console.log(action.id)
         ),
       };
