@@ -101,7 +101,7 @@
 
 .Modal-cart{
   
-    
+    display:flex;
     margin-left: 580px;
     margin-top: 5px;
 
@@ -121,4 +121,48 @@
     margin-left: 20px;
     margin-bottom: -7px;
 }
+
+.remove-button{
+    display: flex;
+    border: none;
+    color: #016dff;
+    font-size: 22px;
+    background-color: white;
+    margin-left: 50px;
+    margin-top: 18px;
+
+    
+
+    
+}
+
+.product-title{
+    width: 280px;
+    margin-top: 5px;
+}
  
+.product-amount {
+    padding-left: 20px ;
+    padding-right: 25px;
+    margin-left: 50px;
+    margin-top: 5px;
+
+}
+
+.cartProducts-quantity{
+    padding-left: 50px;
+    margin-top: 5px;
+    margin-left: 15px;
+    align-items: center;
+ 
+
+}
+
+#increament-decreament{
+    font-size: 22px;
+    margin-left: 3px;
+    margin-right: 3px;
+    color:grey;
+    
+}
+

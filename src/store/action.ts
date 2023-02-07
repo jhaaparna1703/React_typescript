@@ -7,32 +7,33 @@ export const showProducts = (products: IProduct[]) => {
   };
   return action;
 };
-export const addToCart = (post:IProduct ) => {
+
+export const addToCart = (product: ICartProduct) => {
   return {
     type: actionTypes.ADD_TO_CART,
-    post
+    product,
   };
 };
 export const removeFromCart = (id: number) => {
   return {
     type: actionTypes.REMOVE_FROM_CART,
-    id,
+    payload: id,
   };
 };
 export const subtractQuantity = (id: number) => {
   return {
     type: actionTypes.SUB_QUANTITY,
-    id,
+    payload: id,
   };
 };
 export const addQuantity = (id: number) => {
   return {
     type: actionTypes.ADD_QUANTITY,
-    id,
+    payload: id,
   };
 };
-export const emptyCart = () => {
+export const totalAmount = () => {
   return {
-    type: actionTypes.EMPTY_CART,
+    type: actionTypes.TOTAL_AMOUNT,
   };
 };

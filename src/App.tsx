@@ -6,11 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Header } from "./components/appHeader";
 import { ProductOptions } from "./components/productOptions";
 import { ShoppingSection } from "./components/shoppingSection";
-import ProductApi from "./components/productApi";
-import { useEffect } from "react";
 
 function App() {
-  
   return (
     <div className="App">
       <header>
@@ -19,7 +16,6 @@ function App() {
 
       <ProductOptions />
       <hr className="section-division" />
-      {/* <ProductApi/> */}
       <ShoppingSection />
     </div>
   );

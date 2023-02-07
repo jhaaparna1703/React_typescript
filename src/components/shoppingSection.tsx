@@ -7,19 +7,16 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import data from "../data.json";
+import { useState } from "react";
 import { Dispatch } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { addToCart, showProducts } from "../store/action";
-
-interface IProductType {
-  id: number;
-  image: string;
-  title: string;
-  price: number;
-  description: string;
-}
+import { log } from "console";
 
 export const ShoppingSection = () => {
+  const [pro, setPro] = useState<IProduct[]>([]);
+
+  
   const dispatch: Dispatch<any> = useDispatch();
 
   // Saving product json data in store
@@ -30,6 +27,7 @@ export const ShoppingSection = () => {
 
   // Calling reducer action to save the data in store
   useEffect(() => {
+    setPro(data);
     showProduct(data);
   }, [showProduct]);
 
@@ -39,26 +37,35 @@ export const ShoppingSection = () => {
     shallowEqual
   );
 
-  const addCartHandler = (post: IProduct) => {
-    console.log(post);
+  const addCartHandler = (post: ICartProduct) => {
     dispatch(addToCart(post));
+    // console.log(post, "ye cart ka hai");
   };
+
+  const CartProducts = React.useCallback(
+    (cartProducts: ICartProduct[]) => dispatch(cartProducts),
+    [dispatch]
+  );
+
   console.log("PRODUCTS FROM REDUX", products);
 
   const columnsPerRow = 3;
 
   const getColumnsForRow = () => {
-    let items = products.map((post: IProductType) => {
-      console.log(post, "post");
+    let items = pro.map((post: IProduct) => {
+      console.log(post, "hello");
       return (
         <Col key={post.id}>
-          <Card style={{ width: "18rem" }} className="card">
+          <Card style={{ width: "19rem", height: "33rem" }} className="card">
             <Card.Img variant="top" src={post.image} className="products-img" />
             <Card.Body>
               <Card.Title>{post.title.substring(0, 20)}</Card.Title>
               <Card.Text>{post.description.substring(0, 38)}...</Card.Text>
               <Card.Text>Price : ${post.price}</Card.Text>
-              <Button variant="primary" onClick={() => addCartHandler(post)}>
+              <Button
+                variant="primary"
+                onClick={() => addCartHandler({ ...post, quantity: 1 })}
+              >
                 Add to Cart
               </Button>
             </Card.Body>
