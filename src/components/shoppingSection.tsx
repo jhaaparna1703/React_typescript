@@ -42,10 +42,6 @@ export const ShoppingSection = () => {
     // console.log(post, "ye cart ka hai");
   };
 
-  const CartProducts = React.useCallback(
-    (cartProducts: ICartProduct[]) => dispatch(cartProducts),
-    [dispatch]
-  );
 
   console.log("PRODUCTS FROM REDUX", products);
 

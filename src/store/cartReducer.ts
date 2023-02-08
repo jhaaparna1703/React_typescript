@@ -8,9 +8,6 @@ const initialState: CartState = {
     throw new Error("Function not implemented.");
   },
 };
-interface Iprops {
-  amount: number;
-}
 
 const CartReducer = (
   state: CartState = initialState,
@@ -32,15 +29,10 @@ const CartReducer = (
         let tempArr = [...state.cartProducts];
 
         tempArr[index].quantity += 1;
-        const totalAmount = Object.values(state.cartProducts).reduce(
-          (result, cartItem) => result + cartItem.price * cartItem.quantity,
-          0
-        );
-        console.log(totalAmount, "total price is this much");
+
         return {
           ...state,
           cartProducts: tempArr,
-          totalAmount,
         };
       }
     case actionTypes.REMOVE_FROM_CART: {
@@ -48,6 +40,7 @@ const CartReducer = (
       const newCartProducts = state.cartProducts.filter(
         (cartItems) => cartItems.id !== action.payload
       );
+
       // console.log(newCartProducts, "newCartProducts");
       return {
         ...state,
@@ -61,9 +54,8 @@ const CartReducer = (
           return { ...cartItem, quantity: cartItem.quantity + 1 };
         }
         return cartItem;
-       
-      }
-      );
+      });
+
       return {
         ...state,
         cartProducts: tempCart,
@@ -79,29 +71,12 @@ const CartReducer = (
           return cartItem;
         })
         .filter((cartItem) => cartItem.quantity !== 0);
+
       return {
         ...state,
         cartProducts: tempCart,
       };
     }
-
-    // case actionTypes.TOTAL_AMOUNT:{
-    //   let {totalPrice, totalQuantity} = state.cartProducts.reduce((accum, curVal) =>{
-    //     let {price, quantity} = curVal;
-
-    //     let updatedTotalAmount = price * quantity;
-    //     accum.totalPrice += updatedTotalAmount;
-
-    //     return accum.totalQuantity += quantity;
-    //     return accum;
-    //   },
-    //   {
-    //     totalPrice :0,
-    //     totalQuantity:0
-
-    //   });
-    //   return {...state,  totalQuantity, totalPrice}
-    // }
   }
 
   return state;
